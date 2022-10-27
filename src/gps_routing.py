@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import rospy
 from sensor_msgs.msg import NavSatFix
@@ -9,6 +9,8 @@ def gps_callback(data):
 if __name__ == '__main__':
 	rospy.init_node('message_router_server')
 	rate = rospy.Rate(10)
+
+	rospy.loginfo("Running the node...")
 
 	rospy.Subscriber("/drone1_gps", NavSatFix, gps_callback)
 
